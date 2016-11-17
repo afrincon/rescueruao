@@ -1,5 +1,10 @@
 <?php
 
+$host = 'enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+$username = 'yay5pk366gbx9wdz';
+$password = 'htvlbqromoftgra4';
+$database = 'xb4f6sgmgkcp855h';
+
 return [
 
     /*
@@ -26,7 +31,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' =>  'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,11 +59,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host'      => $host,
+            'database'  => $database,
+            'username'  => $username,
+            'password'  => $password,
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
