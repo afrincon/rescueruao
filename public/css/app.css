@@ -5886,4 +5886,10 @@ body {
 .logo404 h1 {
   text-align: center; }
 
+.navbar-default {
+  background-color: #40979c; }
+
+.navbar-default .navbar-nav li a, .navbar-default .navbar-brand {
+  color: #fff; }
+
 /*# sourceMappingURL=app.css.map */
