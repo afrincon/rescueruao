@@ -78,6 +78,7 @@ class RegisterController extends Controller
             'address' =>  $data['direccion'],
             'phone' =>  $data['telefono'],
             'id_rol'  =>  '4',
+            'estado'  =>  'Activo',
         ]);
     }
 }

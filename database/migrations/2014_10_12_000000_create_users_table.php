@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('bloodtype')->nullable();
             $table->string('height')->nullable();
             $table->string('health_service')->nullable();
+            $table->enum('estado', array('Activo', 'Inactivo'));
             $table->rememberToken();
             $table->timestamps();
         });

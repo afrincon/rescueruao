@@ -17,11 +17,12 @@ class UserTableSeeder extends Seeder
           'last_name' =>  'Rincón',
           'gender'  =>  'Masculino',
           'name'  => 'Administrador',
-          'email'  =>  'arincon@rescueruai.io',
+          'email'  =>  'arincon@rescueruo.io',
           'password' => bcrypt('Ev4nerv1525*'),
           'id_rol'  =>  '1',
           'address' =>  'Avenida Siempre Viva 123',
           'phone' =>  '8930303',
+          'estado'  =>  'Activo',
           'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
           'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
       ]);
