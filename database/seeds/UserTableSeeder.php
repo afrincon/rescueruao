@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
           'last_name' =>  'Rincón',
           'gender'  =>  'Masculino',
           'name'  => 'Administrador',
-          'email'  =>  'arincon@rescueruo.io',
+          'email'  =>  'arincon@rescueruao.io',
           'password' => bcrypt('Ev4nerv1525*'),
           'id_rol'  =>  '1',
           'address' =>  'Avenida Siempre Viva 123',
