@@ -13,7 +13,7 @@ class SuscriptorController extends Controller
     }
 
     public function index(){
-        $suscriptores = User::paginate();
+        $suscriptores = User::where('id_rol', '=', 4)->paginate();
         return view('backend.suscriptores.index', compact('suscriptores'));
     }
 
@@ -27,7 +27,7 @@ class SuscriptorController extends Controller
             'nombres' => 'required|max:30',
             'apellidos' => 'required|max:30',
             'genero' => 'required',
-            'name' => 'required|max:30|exists:users',
+            'name' => 'required|max:30',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
             'direccion' => 'required',
@@ -55,7 +55,6 @@ class SuscriptorController extends Controller
             'id_rol'  =>  '4',
             'estado'  =>  'Activo',
         ]);
-        dd($suscriptor);
         $suscriptor->save();
         return redirect()->route('suscriptores.index');
     }
