@@ -43,7 +43,7 @@ class SuscriptorController extends Controller
             'first_name' => $data['nombres'],
             'last_name' => $data['apellidos'],
             'gender' => $data['genero'],
-            'name' => $data['usuario'],
+            'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'address' =>  $data['direccion'],
