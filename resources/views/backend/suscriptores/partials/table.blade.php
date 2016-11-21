@@ -15,7 +15,6 @@
         <th>Estado</th>
         <th>Fecha de Creación</th>
         <th>Ultima Modificación</th>
-        <th>Acciones</th>
     </thead>
     <tbody>
     @foreach($suscriptores as $suscriptor)
@@ -35,9 +34,6 @@
             <td> {{ $suscriptor->estado  }}</td>
             <td> {{ $suscriptor->created_at }}</td>
             <td> {{ $suscriptor->updated_at }}</td>
-            <td>
-                <a class="btn btn-primary" href="{{ route('ambulancias.edit', $vehiculo) }}">Editar</a>
-            </td>
         </tr>
     @endforeach
     </tbody>
