@@ -33,7 +33,7 @@ class SuscriptorController extends Controller
             'direccion' => 'required',
             'telefono'  =>  'required',
             'nacimiento' => 'date',
-            'altura'    => 'digits_between'
+            'altura'    => 'digits'
         ]);
 
         // Guardar datos
