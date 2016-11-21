@@ -16,4 +16,49 @@ class SuscriptorController extends Controller
         $suscriptores = User::paginate();
         return view('backend.suscriptores.index', compact('suscriptores'));
     }
+
+    public function create(){
+        return view('backend.suscriptores.create');
+    }
+
+    public function store(Request $request){
+        // Validaciones
+        $this->validate($request, [
+            'nombres' => 'required|max:30',
+            'apellidos' => 'required|max:30',
+            'genero' => 'required',
+            'name' => 'required|max:30|exists:users',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+            'direccion' => 'required',
+            'telefono'  =>  'required',
+            'nacimiento' => 'date',
+            'altura'    => 'digits_between:40,215'
+        ]);
+
+        // Guardar datos
+        $data = $request->all();
+
+        $suscritor = new User([
+            'first_name' => $data['nombres'],
+            'last_name' => $data['apellidos'],
+            'gender' => $data['genero'],
+            'name' => $data['usuario'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+            'address' =>  $data['direccion'],
+            'phone' =>  $data['telefono'],
+            'birthdate' => $data['nacimiento'],
+            'bloodtype' => $data['sangre'],
+            'height'    =>  $data['altura'],
+            'health_service' => $data['salud'],
+            'id_rol'  =>  '4',
+            'estado'  =>  'Activo',
+        ]);
+
+        $suscritor->save();
+        return redirect()->route('suscriptores.index');
+    }
+
+
 }

@@ -14,6 +14,7 @@
             <ul class="dropdown-menu forAnimate" role="menu">
                 <li><a href="{{ url('/suscriptores') }}">Listar Suscriptores</a></li>
                 <li class="divider"></li>
+                <li><a href="{{ route('suscriptores.create') }}">Crear Suscriptor</a></li>
             </ul>
         </li>    </ul>
 </nav>

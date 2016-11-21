@@ -24,7 +24,7 @@ Route::resource('ambulancias', 'VehiculosController' , ['only' => [
 ]]);
 
 Route::resource('suscriptores', 'SuscriptorController' , ['only' => [
-    'index'
+    'index', 'create', 'store'
 ]]);
 
 
