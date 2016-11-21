@@ -39,7 +39,7 @@ class SuscriptorController extends Controller
         // Guardar datos
         $data = $request->all();
 
-        $suscritor = new User([
+        $suscriptor = new User([
             'first_name' => $data['nombres'],
             'last_name' => $data['apellidos'],
             'gender' => $data['genero'],
@@ -55,8 +55,8 @@ class SuscriptorController extends Controller
             'id_rol'  =>  '4',
             'estado'  =>  'Activo',
         ]);
-
-        $suscritor->save();
+        dd($suscriptor);
+        $suscriptor->save();
         return redirect()->route('suscriptores.index');
     }
 
