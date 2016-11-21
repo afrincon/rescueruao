@@ -45,6 +45,7 @@
                     <ul class="nav navbar-nav">
                       @if(!Auth::guest())
                         <li><a href="{{ url('/ambulancias') }}">Ambulancias</a></li>
+                        <li><a href="{{ url('/suscriptores') }}">Susciptores</a></li>
                       @endif
                     </ul>
 
