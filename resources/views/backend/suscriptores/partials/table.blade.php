@@ -7,7 +7,6 @@
         <th>Nombre de Usuario</th>
         <th>Correo</th>
         <th>Teléfono</th>
-        <th>Fecha de Cumpleaños</th>
         <th>Estado</th>
         <th>Fecha de Creación</th>
         <th>Ultima Modificación</th>
