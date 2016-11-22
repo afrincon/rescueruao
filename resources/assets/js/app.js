@@ -18,16 +18,3 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
-
-var URL = '/getvehicles';
-
-function fetchDemo() {
-    fetch(URL).then(function(response) {
-        console.log(response);
-        return response.json();
-    }).then(function(json) {
-        insertPhotos(json);
-    });
-}
-
-fetchDemo();
