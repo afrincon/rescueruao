@@ -19,5 +19,4 @@ Route::get('/user', function (Request $request) {
 
 Route::put('/enviarubicacion', 'UbicacionVehiculoController@guardarUbicacion');
 
-Route::get('/obtenervehiculos', 'VehiculosController@countVehicles');
 

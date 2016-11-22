@@ -19,5 +19,11 @@ const app = new Vue({
     el: '#app'
 });
 
+var request = new Request({
+    url: 'http://local.io/obtenervehiculos',
+    method: 'GET'
+});
 
-
+fetch(request).then(function (response) {
+    console.log(response);
+});

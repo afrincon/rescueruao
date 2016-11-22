@@ -29,6 +29,4 @@ Route::resource('suscriptores', 'SuscriptorController' , ['only' => [
 
 Route::get('/obtenerUbicacion/{id}', 'VehiculosController@getVehicleInformation');
 
-
-
-
+Route::get('/getvehicles', 'VehiculosController@countVehicles');
