@@ -52,4 +52,14 @@ class VehiculosController extends Controller
       return redirect()->route('ambulancias.index');
 
   }
+
+  public static function countVehicles(){
+      $vehicles = Vehiculo::where('estado', '=', 'Activo' )->count();
+      return $vehicles;
+  }
+
+  public function getVehicleInformation(){
+      $ubicacion = UbicacionesVehiculos::all();
+      return compact('ubicacion');
+  }
 }

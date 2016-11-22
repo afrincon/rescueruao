@@ -12,6 +12,6 @@ class Vehiculo extends Model
 
     public function vehiculoUbicacion()
     {
-        return $this->hasOne('UbicacionesVehiculo', 'id_vehiculo');
+        return $this->hasMany('App\UbicacionesVehiculos', 'id_vehiculo');
     }
 }

@@ -44,6 +44,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                       @if(!Auth::guest())
+                        <li><a href="{{ url('/dashboard') }}">Inicio</a></li>
                         <li><a href="{{ url('/ambulancias') }}">Ambulancias</a></li>
                         <li><a href="{{ url('/suscriptores') }}">Suscriptores</a></li>
                       @endif
