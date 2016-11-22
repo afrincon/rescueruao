@@ -20,7 +20,7 @@ const app = new Vue({
 });
 
 // url (required), options (optional)
-fetch('https://rescueruao.herokuapp.com/getvehicles', {
+fetch('/getvehicles', {
     method: 'get'
 }).then(function(response) {
     console.log(response);
