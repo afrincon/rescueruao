@@ -50,12 +50,12 @@ class HomeController extends Controller
         $apiHelperBuilder->setKey('AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0');
         $apiHelper = $apiHelperBuilder->build();
 
-        $marker = new Marker(new Coordinate());
+        /*$marker = new Marker(new Coordinate());
         $marker->setPosition(new Coordinate(3.454956, -76.5183073));
         $marker->setAnimation(Animation::DROP);
         $marker->setIcon(new Icon());
         $marker->setOption('flat', true);
-        $map->getOverlayManager()->addMarker($marker);
+        $map->getOverlayManager()->addMarker($marker);*/
         //dd($map);
         $mapa = $mapHelper->render($map);
         $api = $apiHelper->render([$map]);

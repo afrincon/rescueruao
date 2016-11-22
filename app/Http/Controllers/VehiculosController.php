@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Vehiculo;
 use App\UbicacionesVehiculos;
@@ -58,8 +60,27 @@ class VehiculosController extends Controller
       return $vehicles;
   }
 
-  public function getVehicleInformation(){
-      $ubicacion = UbicacionesVehiculos::all();
-      return compact('ubicacion');
+  public function getVehicleInformation($id){
+
+      $vehiculo = Vehiculo::findOrFail($id);
+
+
+
+        $veh = DB::table('ubicaciones_vehiculos')
+            ->where('id_vehiculo', '=', $id)
+            ->orderBy('created_at', 'desc')
+            ->limit(1)
+            ->get();
+
+
+      $data = array();
+      $data['id'] = $vehiculo->id;
+      $data['placa'] = $vehiculo->placa;
+      $data['estado'] = $vehiculo->estado;
+      $data['lat'] = $veh[0]->latitud;
+      $data['lng'] = $veh[0]->longitud;
+
+      $datos = json_encode($data);
+      return $datos;
   }
 }

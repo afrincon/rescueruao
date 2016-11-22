@@ -18,3 +18,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::put('/enviarubicacion', 'UbicacionVehiculoController@guardarUbicacion');
+
+Route::get('/obtenerUbicacion/{id}', 'VehiculosController@getVehicleInformation');

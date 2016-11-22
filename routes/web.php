@@ -27,8 +27,6 @@ Route::resource('suscriptores', 'SuscriptorController' , ['only' => [
     'index', 'create', 'store'
 ]]);
 
-//Route::get('/contarVehiculos', 'VehiculosController@getVehicleInformation');
-
 
 
 
