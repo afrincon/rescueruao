@@ -19,11 +19,15 @@ const app = new Vue({
     el: '#app'
 });
 
-// url (required), options (optional)
-fetch('/getvehicles', {
-    method: 'get'
-}).then(function(response) {
-    console.log(response);
-}).catch(function(err) {
-    console.log("error" + err);
-});
+var URL = '/getvehicles';
+
+function fetchDemo() {
+    fetch(URL).then(function(response) {
+        console.log(response);
+        return response.json();
+    }).then(function(json) {
+        insertPhotos(json);
+    });
+}
+
+fetchDemo();

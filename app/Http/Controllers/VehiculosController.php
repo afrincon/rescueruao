@@ -57,7 +57,13 @@ class VehiculosController extends Controller
 
   public static function countVehicles(){
       $vehicles = Vehiculo::where('estado', '=', 'Activo' )->count();
-      return $vehicles;
+
+      $cantidad = array();
+      $cantidad = [
+          'cantidad' => $vehicles
+      ];
+
+      return $cantidad;
   }
 
   public function getVehicleInformation($id){
@@ -72,7 +78,6 @@ class VehiculosController extends Controller
             ->limit(1)
             ->get();
 
-
       $data = array();
       $data['id'] = $vehiculo->id;
       $data['placa'] = $vehiculo->placa;
@@ -80,7 +85,6 @@ class VehiculosController extends Controller
       $data['lat'] = $veh[0]->latitud;
       $data['lng'] = $veh[0]->longitud;
 
-      $datos = json_encode($data);
-      return $datos;
+      return $data;
   }
 }
