@@ -20,7 +20,7 @@ const app = new Vue({
 });
 
 var request = new Request({
-    url: 'http://local.io/obtenervehiculos',
+    url: 'http://rescueruao.herokuapp.com/obtenervehiculos',
     method: 'GET'
 });
 
