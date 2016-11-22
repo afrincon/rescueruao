@@ -42,9 +42,9 @@ class HomeController extends Controller
 
         $mapHelper = MapHelperBuilder::create()->build();
         $apiHelper = ApiHelperBuilder::create()->build();
-        
 
         echo $mapHelper->render($map);
+
         echo $apiHelper->render([$map]);
 
         return view('home');
