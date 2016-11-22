@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Ivory\GoogleMap\Service\Geocoder\GeocoderService;
-use Http\Adapter\Guzzle6\Client;
-use Http\Message\MessageFactory\GuzzleMessageFactory;
-use Ivory\GoogleMap\Service\Geocoder\Request\GeocoderAddressRequest;
+use Ivory\GoogleMap\Helper\Builder\ApiHelperBuilder;
+use Ivory\GoogleMap\Helper\Builder\MapHelperBuilder;
+use Ivory\GoogleMap\Base\Coordinate;
+use Ivory\GoogleMap\Map;
+use Ivory\GoogleMap\MapTypeId;
+
 
 class HomeController extends Controller
 {
@@ -26,11 +28,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $geocoder = new GeocoderService(new Client(), new GuzzleMessageFactory());
-        $request = new GeocoderAddressRequest('1600 Amphitheatre Parkway, Mountain View, CA');
-        $response = $geocoder->geocode($request);
 
-        dd($response);
+        $map = new Map();
+        $map->setHtmlId('map_canvas');
+        // Disable the auto zoom flag (disabled by default)
+        $map->setAutoZoom(false);
+        // Sets the center
+        $map->setCenter(new Coordinate(3.454956, -76.5183073));
+        // Sets the zoom
+        $map->setMapOption('zoom', 12);
+        $map->setMapOption('mapTypeId', MapTypeId::ROADMAP);
+        $map->setHtmlAttribute('class', 'gmapuao');
+
+        $mapHelper = MapHelperBuilder::create()->build();
+        $apiHelper = ApiHelperBuilder::create()->build();
+
+        echo $mapHelper->render($map);
+        echo $apiHelper->render([$map]);
 
         return view('home');
     }
