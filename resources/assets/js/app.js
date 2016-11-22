@@ -18,12 +18,3 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
-
-var request = new Request({
-    url: 'http://rescueruao.herokuapp.com/obtenervehiculos',
-    method: 'GET'
-});
-
-fetch(request).then(function (response) {
-    console.log(response);
-});
