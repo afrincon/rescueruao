@@ -40,11 +40,16 @@ class HomeController extends Controller
         $map->setMapOption('mapTypeId', MapTypeId::ROADMAP);
         $map->setHtmlAttribute('class', 'gmapuao');
 
-        $mapHelper = MapHelperBuilder::create()->build();
-        $apiHelper = ApiHelperBuilder::create()->build();
+        $mapHelperBuilder = MapHelperBuilder::create();
+        $mapHelper = $mapHelperBuilder->build();
+
+        $apiHelperBuilder = ApiHelperBuilder::create();
+        $apiHelperBuilder->setKey('AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0');
+        $apiHelper = $apiHelperBuilder->build();
+
+
 
         echo $mapHelper->render($map);
-
         echo $apiHelper->render([$map]);
 
         return view('home');
