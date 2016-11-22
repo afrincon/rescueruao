@@ -30,6 +30,8 @@ class HomeController extends Controller
         $request = new GeocoderAddressRequest('1600 Amphitheatre Parkway, Mountain View, CA');
         $response = $geocoder->geocode($request);
 
+        dd($response);
+
         return view('home');
     }
 }
