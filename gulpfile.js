@@ -17,6 +17,6 @@ elixir(mix => {
     mix.sass('app.scss')
        .webpack('app.js');
     mix.browserSync({
-      proxy: 'rescueruao.herokuapp.com'
+      proxy: 'local.io'
     });
 });
