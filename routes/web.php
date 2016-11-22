@@ -27,6 +27,8 @@ Route::resource('suscriptores', 'SuscriptorController' , ['only' => [
     'index', 'create', 'store'
 ]]);
 
+Route::get('/obtenerUbicacion/{id}', 'VehiculosController@getVehicleInformation');
+
 
 
 
