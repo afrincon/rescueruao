@@ -12,6 +12,8 @@ function initMap() {
     mapTypeId: 'roadmap'
   });
   map.setTilt(45);
+  var markers = [];
+
   //Obtener informacion de latitud y longitud
   $.get( '/getvehicles', function( vehiculos ) {
     for (i = 1;  i <= vehiculos.cantidad; i++){
@@ -21,16 +23,21 @@ function initMap() {
         // console.log('cargada data', ubicacion);
         ubicacion.lat = parseFloat(ubicacion.lat, 10);
         ubicacion.lng = parseFloat(ubicacion.lng, 10);
-        var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
-        // Multiple Markers
+        /*var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
 
         var marker = new google.maps.Marker({
           position: uluru,
           label: ubicacion.placa,
           map: map
-        });
+        });*/
+
+        markers = [
+            [ubicacion.placa, ubicacion.lat, ubicacion.lng ]
+        ]
 
       });
+
+      console.log(markers);
     }
   });
 
