@@ -36,7 +36,7 @@ function initMap() {
         ubicacion.lat = parseFloat(ubicacion.lat, 10);
         ubicacion.lng = parseFloat(ubicacion.lng, 10);
         locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
-        console.log(locations);
+        // console.log(locations);
         var marker = new google.maps.Marker({
           position: {lat: ubicacion.lat, lng: ubicacion.lng},
           label: ubicacion.placa,
