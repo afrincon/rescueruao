@@ -21,7 +21,7 @@ function initMap() {
       var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
       var marker = new google.maps.Marker({
         position: uluru,
-        label: ubicacion.placa,
+        title: ubicacion.placa,
         map: map
       });
     });
