@@ -15,7 +15,7 @@ function initMap() {
   //Obtener informacion de latitud y longitud
   $.get( '/getvehicles', function( vehiculos ) {
     for (i = 1;  i <= vehiculos.cantidad; i++){
-      $.get( '/obtenerUbicacion/'+i, function( ubicacion ) {
+      $.get( '/obtenerUbicacion/1', function( ubicacion ) {
         // $( ".result" ).html( data );
         // alert( "Load was performed." );
         // console.log('cargada data', ubicacion);
