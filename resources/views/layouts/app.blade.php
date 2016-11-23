@@ -89,5 +89,7 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="/js/rescueruao.js"></script>
+		<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0&callback=initMap">
 </body>
 </html>
