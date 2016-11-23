@@ -30,12 +30,6 @@ function initMap() {
   // console.log('ran init map');
 
     // Trigger downloadUrl at an interval
-    intervalId = setInterval(updateLocation, 5000);
-
-
-}
-
-function updateLocation() {
     $.get( '/getvehicles', function( vehiculos ) {
         var locations = [];
         for(var i = 1; i <= vehiculos.cantidad; i++) {
@@ -88,4 +82,10 @@ function updateLocation() {
         }
 
     });
+
+
+}
+
+function updateLocation() {
+
 }
