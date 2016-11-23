@@ -7850,4 +7850,14 @@ body {
   height: auto !important;
 }
 
+.btn-rescuer {
+  background: #40979c;
+}
+
+.btn-rescuer:hover {
+  color: #40979c;
+  background-color: #fff;
+  border-color: #1f648b;
+}
+
 /*# sourceMappingURL=app.css.map */
