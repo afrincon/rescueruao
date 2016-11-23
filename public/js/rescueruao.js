@@ -23,7 +23,7 @@ function initMap() {
   //       position: uluru,
   //       label: ubicacion.placa,
   //       map: map
-  //     });
+  //     });*
   //   });
   // });
 
@@ -39,7 +39,7 @@ function initMap() {
         // console.log(locations);
         var marker = new google.maps.Marker({
           position: {lat: ubicacion.lat, lng: ubicacion.lng},
-          label: ubicacion.placa,
+          /*label: ubicacion.placa,*/
           map: map
         });
       });
