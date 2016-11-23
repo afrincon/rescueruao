@@ -11,10 +11,12 @@ function initMap() {
     center: uluru
   });
   //Obtener informacion de latitud y longitud
-  $.get( '/getvehicles', function( data ) {
-    // $( ".result" ).html( data );
-    // alert( "Load was performed." );
-    console.log('cargada data', data);
+  $.get( '/getvehicles', function( vehiculos ) {
+    $.get( '/obtenerUbicacion/1', function( ubicacion ) {
+      // $( ".result" ).html( data );
+      // alert( "Load was performed." );
+      console.log('cargada data', ubicacion);
+    });
   });
   var marker = new google.maps.Marker({
     position: uluru,
