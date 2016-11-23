@@ -26,6 +26,7 @@ function initMap() {
         label: ubicacion.placa,
         map: map
       });
+      console.log(marker);
     });
   });
 
