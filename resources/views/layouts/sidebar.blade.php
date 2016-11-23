@@ -16,5 +16,12 @@
                 <li class="divider"></li>
                 <li><a href="{{ route('suscriptores.create') }}">Crear Suscriptor</a></li>
             </ul>
-        </li>    </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <span class="caret"></span></a>
+            <ul class="dropdown-menu forAnimate" role="menu">
+                <li><a href="{{ url('/servicios') }}">Listar Servicios</a></li>
+            </ul>
+        </li>
+    </ul>
 </nav>
