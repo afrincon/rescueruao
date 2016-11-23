@@ -29,56 +29,60 @@ function initMap() {
 
   // console.log('ran init map');
 
-  $.get( '/getvehicles', function( vehiculos ) {
-    var locations = [];
-    for(var i = 1; i <= vehiculos.cantidad; i++) {
-      $.get( '/obtenerUbicacion/'+ i, function( ubicacion ) {
-          console.log(ubicacion);
-        ubicacion.lat = parseFloat(ubicacion.lat, 10);
-        ubicacion.lng = parseFloat(ubicacion.lng, 10);
-        locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
-        // console.log(locations);
-          var tipo ='';
-          var image_icon = '';
+    setInterval(updateLocation, 5000);
+}
 
-          if(ubicacion.tipo === 'tipo1') {
-              tipo = 'Ambulancia Asistencial'
-          } else {
-              tipo = 'Ambulancia no Asistencial'
-          }
+function updateLocation() {
+    $.get( '/getvehicles', function( vehiculos ) {
+        var locations = [];
+        for(var i = 1; i <= vehiculos.cantidad; i++) {
+            $.get( '/obtenerUbicacion/'+ i, function( ubicacion ) {
+                console.log(ubicacion);
+                ubicacion.lat = parseFloat(ubicacion.lat, 10);
+                ubicacion.lng = parseFloat(ubicacion.lng, 10);
+                locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
+                // console.log(locations);
+                var tipo ='';
+                var image_icon = '';
 
-          if(ubicacion.estadoactual === 'Disponible') {
-              image_icon = '/images/icon-avaliable.png';
-          } else {
-              image_icon = '/images/icon-busy.png';
-          }
+                if(ubicacion.tipo === 'tipo1') {
+                    tipo = 'Ambulancia Asistencial'
+                } else {
+                    tipo = 'Ambulancia no Asistencial'
+                }
 
-        var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h3 id="firstHeading" class="firstHeading">' +  ubicacion.placa + '</h3>'+
-            '<div id="bodyContent">'+
-            '<p>Esta Ambulancia es de tipo <b>'+ tipo +'</b><br />' +
-            '<p>Actualmente se encuentra: <b>'+ ubicacion.estadoactual +'</b><br />' +
-            '</div>'+
-            '</div>';
+                if(ubicacion.estadoactual === 'Disponible') {
+                    image_icon = '/images/icon-avaliable.png';
+                } else {
+                    image_icon = '/images/icon-busy.png';
+                }
 
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
+                var contentString = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<h3 id="firstHeading" class="firstHeading">' +  ubicacion.placa + '</h3>'+
+                    '<div id="bodyContent">'+
+                    '<p>Esta Ambulancia es de tipo <b>'+ tipo +'</b><br />' +
+                    '<p>Actualmente se encuentra: <b>'+ ubicacion.estadoactual +'</b><br />' +
+                    '</div>'+
+                    '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
 
 
-        var marker = new google.maps.Marker({
-            position: {lat: ubicacion.lat, lng: ubicacion.lng},
-            /*label: ubicacion.placa,*/
-            map: map,
-            icon: image_icon
-        });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-      });
-    }
+                var marker = new google.maps.Marker({
+                    position: {lat: ubicacion.lat, lng: ubicacion.lng},
+                    /*label: ubicacion.placa,*/
+                    map: map,
+                    icon: image_icon
+                });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+            });
+        }
 
-  });
+    });
 }
