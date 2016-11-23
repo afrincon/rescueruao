@@ -78,12 +78,14 @@ class VehiculosController extends Controller
             ->limit(1)
             ->get();
 
+
       $data = array();
       $data['id'] = $vehiculo->id;
       $data['placa'] = $vehiculo->placa;
       $data['estado'] = $vehiculo->estado;
       $data['lat'] = $veh[0]->latitud;
       $data['lng'] = $veh[0]->longitud;
+      $data['tipo'] = $vehiculo->tipo;
 
       return $data;
   }

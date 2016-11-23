@@ -33,6 +33,7 @@ function initMap() {
     var locations = [];
     for(var i = 1; i <= vehiculos.cantidad; i++) {
       $.get( '/obtenerUbicacion/'+ i, function( ubicacion ) {
+          console.log(ubicacion);
         ubicacion.lat = parseFloat(ubicacion.lat, 10);
         ubicacion.lng = parseFloat(ubicacion.lng, 10);
         locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
@@ -41,9 +42,9 @@ function initMap() {
         var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">' +  ubicacion.placa + '</h1>'+
+            '<h3 id="firstHeading" class="firstHeading">' +  ubicacion.placa + '</h3>'+
             '<div id="bodyContent">'+
-            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>' +
+            '<p>Esta Ambulancia es de tipo <b>'+ vehiculos.tipo +'</b>' +
             '</div>'+
             '</div>';
 
