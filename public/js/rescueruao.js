@@ -13,7 +13,7 @@ function initMap() {
 
 
     //Obtener informacion de latitud y longitud
-    /*$.get( '/getvehicles', function( vehiculos ) {
+    $.get( '/getvehicles', function( vehiculos ) {
         $.get( '/obtenerUbicacion/1', function( ubicacion ) {
             // $( ".result" ).html( data );
             // alert( "Load was performed." );
@@ -29,27 +29,6 @@ function initMap() {
             });
         });
 
-    });*/
-
-    getLocations();
-    // console.log('ran init map');
-}
-
-function getLocations() {
-    var arr = [];
-    $.get('/getvehicles', function (vehiculos) {
-        console.log('Cantidad de Vehiculos:' +vehiculos.cantidad);
-        for (i=1; i<=vehiculos.cantidad; i++) {
-
-            $.get('/obtenerUbicacion/' + i , function (ubicacion) {
-                ubicacion.lat = parseFloat(ubicacion.lat, 10);
-                ubicacion.lng = parseFloat(ubicacion.lng, 10);
-                arr.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
-            })
-
-        }
     });
-
-    console.log(arr);
-    return arr;
+    // console.log('ran init map');
 }
