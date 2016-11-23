@@ -38,13 +38,19 @@ function initMap() {
         ubicacion.lng = parseFloat(ubicacion.lng, 10);
         locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
         // console.log(locations);
+          var tipo =""
+          if(ubicacion.tipo === 'tipo1') {
+              tipo = 'Ambulancia Asistencial'
+          } else {
+              tipo = 'Ambulancia no Asistencial'
+          }
 
         var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h3 id="firstHeading" class="firstHeading">' +  ubicacion.placa + '</h3>'+
             '<div id="bodyContent">'+
-            '<p>Esta Ambulancia es de tipo <b>'+ vehiculos.tipo +'</b>' +
+            '<p>Esta Ambulancia es de tipo <b>'+ tipo +'</b>' +
             '</div>'+
             '</div>';
 
