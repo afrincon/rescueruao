@@ -37,9 +37,8 @@ function initMap() {
         ubicacion.lng = parseFloat(ubicacion.lng, 10);
         locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
         console.log(locations);
-        var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
         var marker = new google.maps.Marker({
-          position: uluru,
+          position: {lat: ubicacion.lat, lng: ubicacion.lng},
           label: ubicacion.placa,
           map: map
         });
