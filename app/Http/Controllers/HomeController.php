@@ -57,8 +57,11 @@ class HomeController extends Controller
         $marker->setOption('flat', true);
         $map->getOverlayManager()->addMarker($marker);*/
         //dd($map);
-        $mapa = $mapHelper->render($map);
-        $api = $apiHelper->render([$map]);
+        // $mapa = $mapHelper->render($map);
+        // $api = $apiHelper->render([$map]);
+
+        $mapa = '';
+        $api = '';
 
         return view('home', compact('mapa', 'api'));
     }
