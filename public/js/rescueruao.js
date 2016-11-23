@@ -31,14 +31,11 @@ function initMap() {
           map: map
         });*/
 
-        markers = [
-            [ubicacion.placa, ubicacion.lat, ubicacion.lng ]
-        ]
-        console.log(markers);
-      });
+        markers.push([ubicacion.placa, ubicacion.lat, ubicacion.lng ]);
 
-      console.log(markers);
+      });
     }
+    console.log(markers);
   });
 
   // console.log('ran init map');
