@@ -77,7 +77,6 @@ class VehiculosController extends Controller
             ->orderBy('created_at', 'desc')
             ->limit(1)
             ->get();
-    dd($veh);
 
       $data = array();
       $data['id'] = $vehiculo->id;
