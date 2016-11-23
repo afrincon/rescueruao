@@ -50,7 +50,8 @@ function initMap() {
             '</div>'+
             '<h3 id="firstHeading" class="firstHeading">' +  ubicacion.placa + '</h3>'+
             '<div id="bodyContent">'+
-            '<p>Esta Ambulancia es de tipo <b>'+ tipo +'</b>' +
+            '<p>Esta Ambulancia es de tipo <b>'+ tipo +'</b><br />' +
+            '<p>Actualmente se encuentra: <b>'+ ubicacion.estadoactual +'</b><br />' +
             '</div>'+
             '</div>';
 

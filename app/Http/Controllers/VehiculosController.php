@@ -77,7 +77,7 @@ class VehiculosController extends Controller
             ->orderBy('created_at', 'desc')
             ->limit(1)
             ->get();
-
+    dd($veh);
 
       $data = array();
       $data['id'] = $vehiculo->id;
@@ -86,6 +86,7 @@ class VehiculosController extends Controller
       $data['lat'] = $veh[0]->latitud;
       $data['lng'] = $veh[0]->longitud;
       $data['tipo'] = $vehiculo->tipo;
+      $data['estadoactual'] = $veh[0]->estado;
 
       return $data;
   }

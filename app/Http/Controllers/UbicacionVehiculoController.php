@@ -15,7 +15,8 @@ class UbicacionVehiculoController extends Controller
         $ubicacion = new UbicacionesVehiculos([
             'id_vehiculo' => $vehiculo->id,
             'latitud' => $data['lat'],
-            'longitud' => $data['lng']
+            'longitud' => $data['lng'],
+            'estado'    => $data['estado']
         ]);
 
         $ubicacion->save();
