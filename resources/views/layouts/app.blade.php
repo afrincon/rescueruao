@@ -88,5 +88,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/rescueruao.js"></script>
 </body>
 </html>
