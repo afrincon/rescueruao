@@ -27,10 +27,22 @@ function initMap() {
                 label: ubicacion.placa,
                 map: map
             });
-            console.log(uluru);
-            console.log(marker);
         });
-  });
+
+    });
+
+
+    $.get('/getvehicles', function (vehiculos) {
+        var locations = [];
+        for (i=1; i<= vehiculos.cantidad; i++){
+            $.get('/obtenerUbicacion/'+i, function (ubicacion) {
+                ubicacion.lat = parseFloat(ubicacion.lat, 10);
+                ubicacion.lng = parseFloat(ubicacion.lng, 10);
+                locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
+            })
+        }
+        console.log(locations);
+    })
 
 
   // console.log('ran init map');
