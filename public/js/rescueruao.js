@@ -37,10 +37,28 @@ function initMap() {
         ubicacion.lng = parseFloat(ubicacion.lng, 10);
         locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
         // console.log(locations);
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">' +  ubicacion.placa + '</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>' +
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+
         var marker = new google.maps.Marker({
           position: {lat: ubicacion.lat, lng: ubicacion.lng},
           /*label: ubicacion.placa,*/
           map: map
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
         });
       });
     }
