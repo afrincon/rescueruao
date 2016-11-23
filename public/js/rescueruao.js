@@ -5,7 +5,7 @@ window.jQuery(function() {
 });
 
 function initMap() {
-  var uluru = {lat: 3.454956, lng: -76.5183073};
+
   var map = new google.maps.Map(document.getElementById('mapa'), {
     zoom: 12,
     center: uluru
@@ -16,11 +16,14 @@ function initMap() {
       // $( ".result" ).html( data );
       // alert( "Load was performed." );
       console.log('cargada data', ubicacion);
+      var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
+      var marker = new google.maps.Marker({
+        position: uluru,
+        label: ubicacion.placa,
+        map: map
+      });
     });
   });
-  var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-  });
+
   // console.log('ran init map');
 }
