@@ -15,4 +15,5 @@
         </div>
     </div>
 </div>
+<script src="/js/rescueruao.js"></script>
 @endsection
