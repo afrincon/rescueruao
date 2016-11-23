@@ -14,9 +14,6 @@ class CreateServiciosPrestadosTable extends Migration {
 			$table->string('latitud_origen');
 			$table->string('longitud_origen');
 			$table->timestamps();
-
-            $table->foreign('id_servicio')->references('id')->on('servicios');
-            $table->foreign('id_suscriptor')->references('id')->on('usuarios');
 		});
 	}
 
