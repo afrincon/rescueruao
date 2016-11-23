@@ -6,13 +6,16 @@ window.jQuery(function() {
 
 function initMap() {
   var centroMapa = {lat: 3.454956, lng: -76.5183073};
+  var bounds = new google.maps.LatLngBounds();
   var map = new google.maps.Map(document.getElementById('mapa'), {
     zoom: 12,
     center: centroMapa,
     mapTypeId: 'roadmap'
   });
   map.setTilt(45);
-  var markers = [];
+
+  var markers = new Array();
+  var infoWindowContent = new Array();
 
   //Obtener informacion de latitud y longitud
   $.get( '/getvehicles', function( vehiculos ) {
@@ -30,13 +33,20 @@ function initMap() {
           label: ubicacion.placa,
           map: map
         });*/
-
-        markers.push([ubicacion.placa, ubicacion.lat, ubicacion.lng ]);
-
+        markers.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
       });
     }
-    console.log(markers);
+    for( i = 0; i < markers.length; i++ ) {
+      var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+      bounds.extend(position);
+      marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        title: markers[i][0]
+      });
+    }
   });
+
 
   // console.log('ran init map');
 }
