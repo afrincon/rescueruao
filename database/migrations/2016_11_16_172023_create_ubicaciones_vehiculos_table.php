@@ -19,6 +19,7 @@ class CreateUbicacionesVehiculosTable extends Migration
             $table->integer('id_vehiculo')->unsigned();
             $table->string('latitud');
             $table->string('longitud');
+            $table->enum('estado', array('Disponible', 'Ocupada'));
             $table->timestamps();
 
             $table->foreign('id_vehiculo')->references('id')->on('vehiculos');
