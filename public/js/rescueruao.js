@@ -38,6 +38,7 @@ function initMap() {
     }
     for( i = 0; i < markers.length; i++ ) {
       var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+      console.log(position);
       bounds.extend(position);
       marker = new google.maps.Marker({
         position: position,
