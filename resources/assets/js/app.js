@@ -21,7 +21,7 @@ const app = new Vue({
 
 console.log('try loading...');
 
-// window.jQuery(function() {
-//   // Handler for .ready() called.
-// 	console.log('dom is ready');
-// });
+window.jQuery(function() {
+  // Handler for .ready() called.
+	console.log('dom is ready');
+});
