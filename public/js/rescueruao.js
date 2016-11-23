@@ -16,8 +16,8 @@ function initMap() {
       // $( ".result" ).html( data );
       // alert( "Load was performed." );
       // console.log('cargada data', ubicacion);
-      ubicacion.lat = parseInt(ubicacion.lat, 10);
-      ubicacion.lng = parseInt(ubicacion.lng, 10);
+      ubicacion.lat = parseFloat(ubicacion.lat, 10);
+      ubicacion.lng = parseFloat(ubicacion.lng, 10);
       var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
       var marker = new google.maps.Marker({
         position: uluru,
