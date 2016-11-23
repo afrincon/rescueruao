@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
-class UbicacionVehiculosSeeder extends Seeder
+class UbicacionVehiculosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -38,7 +39,7 @@ class UbicacionVehiculosSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('ubicaciones_vehiculos')->insert([
-            'id_vehiculo'  => 41,
+            'id_vehiculo'  => 4,
             'latitud'   =>  '3.429924',
             'longitud'   =>  '-76.541129',
             'estado'  =>  'Disponible',

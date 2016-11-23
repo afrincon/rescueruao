@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
-class VehiculosSeeder extends Seeder
+class VehiculosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

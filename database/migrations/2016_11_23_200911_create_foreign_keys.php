@@ -12,7 +12,7 @@ class CreateForeignKeys extends Migration {
 			$table->foreign('id_servicio')->references('id')->on('servicios');
 		});
 		Schema::table('servicios_prestados', function(Blueprint $table) {
-			$table->foreign('id_suscriptor')->references('id')->on('usuarios');
+			$table->foreign('id_suscriptor')->references('id')->on('users');
 		});
 	}
 
