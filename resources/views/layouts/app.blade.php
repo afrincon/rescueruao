@@ -19,6 +19,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -86,8 +87,8 @@
     </div>
 
     <!-- Scripts -->
-		<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0">
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0">
     <script src="/js/app.js"></script>
     <script src="/js/rescueruao.js"></script>
 
