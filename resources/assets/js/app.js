@@ -18,3 +18,8 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+$(function() {
+  // Handler for .ready() called.
+	console.log('dom is ready');
+});
