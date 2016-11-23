@@ -34,3 +34,5 @@ Route::resource('servicios', 'ServicioController' , ['only' => [
 Route::get('/obtenerUbicacion/{id}', 'VehiculosController@getVehicleInformation');
 
 Route::get('/getvehicles', 'VehiculosController@countVehicles');
+
+Route::get('/obtenerServicio/{id}', 'ServicioController@getServiceInformation');

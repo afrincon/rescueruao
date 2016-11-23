@@ -48,6 +48,7 @@
                         <li><a href="{{ url('/dashboard') }}">Inicio</a></li>
                         <li><a href="{{ url('/ambulancias') }}">Ambulancias</a></li>
                         <li><a href="{{ url('/suscriptores') }}">Suscriptores</a></li>
+                            <li><a href="{{ url('/servicios') }}">Servicios</a></li>
                       @endif
                     </ul>
 
