@@ -20,6 +20,8 @@
         ]); ?>
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0">
 </head>
 <body>
     <div id="app">
@@ -89,7 +91,6 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="/js/rescueruao.js"></script>
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0">
+
 </body>
 </html>
