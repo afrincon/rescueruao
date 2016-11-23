@@ -19,7 +19,7 @@ const app = new Vue({
     el: '#app'
 });
 
-$(function() {
+window.jQuery(function() {
   // Handler for .ready() called.
 	console.log('dom is ready');
 });
