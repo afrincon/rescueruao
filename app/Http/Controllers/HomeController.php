@@ -60,10 +60,7 @@ class HomeController extends Controller
         // $mapa = $mapHelper->render($map);
         // $api = $apiHelper->render([$map]);
 
-        $mapa = '';
-        $api = '';
-
-        return view('home', compact('mapa', 'api'));
+        return view('home');
     }
 
 }
