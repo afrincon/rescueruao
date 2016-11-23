@@ -47,7 +47,7 @@ class HomeController extends Controller
         $mapHelper = $mapHelperBuilder->build();
 
         $apiHelperBuilder = ApiHelperBuilder::create();
-        $apiHelperBuilder->setKey('AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0');
+        //$apiHelperBuilder->setKey('AIzaSyDZTMV320Z8FMSdJN4dc29uzzqKIa2GWA0');
         $apiHelper = $apiHelperBuilder->build();
 
         /*$marker = new Marker(new Coordinate());
