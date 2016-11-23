@@ -14,7 +14,7 @@
 <script>
     export default {
         mounted() {
-            console.log('Component ready.')
+            console.log('Component ready 2.')
         }
 
         function initMap() {
