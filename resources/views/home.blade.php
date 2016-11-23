@@ -7,6 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
+                <example></example>
+
                 <div class="panel-body">
                     {!! $mapa !!}
                     {!! $api !!}
