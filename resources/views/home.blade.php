@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
-                <div id="mapa"></div>
+                <div id="mapa" class="gmapuao"></div>
 
                 <div class="panel-body">
                     {!! $mapa !!}
