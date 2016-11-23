@@ -29,10 +29,6 @@ function initMap() {
 
   // console.log('ran init map');
 
-    setInterval(updateLocation, 5000);
-}
-
-function updateLocation() {
     $.get( '/getvehicles', function( vehiculos ) {
         var locations = [];
         for(var i = 1; i <= vehiculos.cantidad; i++) {
@@ -85,4 +81,8 @@ function updateLocation() {
         }
 
     });
+}
+
+function updateLocation() {
+
 }
