@@ -38,11 +38,19 @@ function initMap() {
         ubicacion.lng = parseFloat(ubicacion.lng, 10);
         locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
         // console.log(locations);
-          var tipo =""
+          var tipo ='';
+          var image_icon = '';
+
           if(ubicacion.tipo === 'tipo1') {
               tipo = 'Ambulancia Asistencial'
           } else {
               tipo = 'Ambulancia no Asistencial'
+          }
+
+          if(ubicacion.estadoactual === 'Disponible') {
+              image_icon = '/images/icon-avaliable.png';
+          } else {
+              image_icon = '/images/icon-busy.png';
           }
 
         var contentString = '<div id="content">'+
@@ -61,9 +69,10 @@ function initMap() {
 
 
         var marker = new google.maps.Marker({
-          position: {lat: ubicacion.lat, lng: ubicacion.lng},
-          /*label: ubicacion.placa,*/
-          map: map
+            position: {lat: ubicacion.lat, lng: ubicacion.lng},
+            /*label: ubicacion.placa,*/
+            map: map,
+            icon: image_icon
         });
         marker.addListener('click', function() {
           infowindow.open(map, marker);
