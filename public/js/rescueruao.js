@@ -11,33 +11,40 @@ function initMap() {
     center: centroMapa
   });
   //Obtener informacion de latitud y longitud
-  $.get( '/getvehicles', function( vehiculos ) {
-    $.get( '/obtenerUbicacion/1', function( ubicacion ) {
-      // $( ".result" ).html( data );
-      // alert( "Load was performed." );
-      // console.log('cargada data', ubicacion);
-      ubicacion.lat = parseFloat(ubicacion.lat, 10);
-      ubicacion.lng = parseFloat(ubicacion.lng, 10);
-      var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
-      var marker = new google.maps.Marker({
-        position: uluru,
-        label: ubicacion.placa,
-        map: map
-      });
-    });
-  });
+  // $.get( '/getvehicles', function( vehiculos ) {
+  //   $.get( '/obtenerUbicacion/1', function( ubicacion ) {
+  //     // $( ".result" ).html( data );
+  //     // alert( "Load was performed." );
+  //     // console.log('cargada data', ubicacion);
+  //     ubicacion.lat = parseFloat(ubicacion.lat, 10);
+  //     ubicacion.lng = parseFloat(ubicacion.lng, 10);
+  //     var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
+  //     var marker = new google.maps.Marker({
+  //       position: uluru,
+  //       label: ubicacion.placa,
+  //       map: map
+  //     });
+  //   });
+  // });
 
   // console.log('ran init map');
 
-  /*$.get( '/getvehicles', function( vehiculos ) {
+  $.get( '/getvehicles', function( vehiculos ) {
     var locations = [];
     for(i=1; i<=vehiculos.cantidad; i++) {
       $.get( '/obtenerUbicacion/1', function( ubicacion ) {
         ubicacion.lat = parseFloat(ubicacion.lat, 10);
         ubicacion.lng = parseFloat(ubicacion.lng, 10);
         locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
+        console.log(locations);
+        var uluru = {lat: ubicacion.lat, lng: ubicacion.lng};
+        var marker = new google.maps.Marker({
+          position: uluru,
+          label: ubicacion.placa,
+          map: map
+        });
       });
     }
-    console.log(locations);
-  });*/
+
+  });
 }
