@@ -29,11 +29,18 @@ function initMap() {
 
   // console.log('ran init map');
 
+    // Trigger downloadUrl at an interval
+    intervalId = setInterval(updateLocation, 5000);
+
+
+}
+
+function updateLocation() {
     $.get( '/getvehicles', function( vehiculos ) {
         var locations = [];
         for(var i = 1; i <= vehiculos.cantidad; i++) {
             $.get( '/obtenerUbicacion/'+ i, function( ubicacion ) {
-                console.log(ubicacion);
+                //console.log(ubicacion);
                 ubicacion.lat = parseFloat(ubicacion.lat, 10);
                 ubicacion.lng = parseFloat(ubicacion.lng, 10);
                 locations.push([ubicacion.placa, ubicacion.lat, ubicacion.lng]);
@@ -81,8 +88,4 @@ function initMap() {
         }
 
     });
-}
-
-function updateLocation() {
-
 }
