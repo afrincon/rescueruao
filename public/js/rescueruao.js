@@ -5,10 +5,10 @@ window.jQuery(function() {
 });
 
 function initMap() {
-
+	var centroMapa = {lat: 3.454956, lng: -76.5183073};
   var map = new google.maps.Map(document.getElementById('mapa'), {
     zoom: 12,
-    center: uluru
+    center: centroMapa
   });
   //Obtener informacion de latitud y longitud
   $.get( '/getvehicles', function( vehiculos ) {
