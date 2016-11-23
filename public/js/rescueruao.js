@@ -34,7 +34,7 @@ function initMap() {
         markers = [
             [ubicacion.placa, ubicacion.lat, ubicacion.lng ]
         ]
-
+        console.log(markers);
       });
 
       console.log(markers);
