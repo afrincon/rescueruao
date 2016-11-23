@@ -1,7 +1,7 @@
 window.jQuery(function() {
   // Handler for .ready() called.
 	console.log('dom is ready');
-	initMap();
+	// initMap();
 });
 
 function initMap() {
@@ -14,4 +14,5 @@ function initMap() {
     position: uluru,
     map: map
   });
+	console.log('ran init map');
 }
