@@ -125,15 +125,15 @@ function initMap() {
 
 }
 
-/*
+
 function loadMarker() {
     // Trigger downloadUrl at an interval
-
+    alert('hello Worls');
 }
 
 setTimeout(function() {  loadMarker(); }, 3000);
 
-google.maps.event.addDomListener(window, 'load', initMap);
+//google.maps.event.addDomListener(window, 'load', initMap);
 google.maps.event.addDomListener(window, 'load', loadMarker);
 
 /*function geocodeLatLng(geocoder, latitude, longitud) {
