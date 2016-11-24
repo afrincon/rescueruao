@@ -93,7 +93,7 @@ function initMap() {
 
                 var geocoder = new google.maps.Geocoder;
 
-                geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
+                var address = geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
 
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
@@ -101,7 +101,7 @@ function initMap() {
                     '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
                     '<div id="bodyContent">'+
                     '<p>usurio solicitante: <b>'+ serviciosprestados.suscriptor +'</b><br />' +
-                    '<p>Ubicada en: <b>'+ serviciosprestados.latitud +'</b>con <b>'+serviciosprestados.latitud +'</b><br />' +
+                    '<p>Ubicada en: <b>'+ address +'</b><br />' +
                     '</div>'+
                     '</div>';
 
@@ -132,8 +132,12 @@ function geocodeLatLng(geocoder, latitude, longitud) {
     geocoder.geocode({'location': latlng}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
             if (results[1]) {
-                console.log(results[1].formatted_address);
+                return formatted_address;
+            } else {
+                window.alert('No results found');
             }
+        } else {
+            window.alert('Geocoder failed due to: ' + status);
         }
     });
 }
