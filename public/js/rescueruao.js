@@ -95,7 +95,7 @@ function initMap() {
 
                 var address = geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
 
-                console.log("direccion" + address);
+                console.log(geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng));
 
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
@@ -136,7 +136,6 @@ function geocodeLatLng(geocoder, latitude, longitud) {
             if (results[1]) {
 
                 var address = results[1].formatted_address;
-                console.log(address);
                 return address;
             } else {
                 window.alert('No results found');
