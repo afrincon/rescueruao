@@ -93,9 +93,9 @@ function initMap() {
 
                 var geocoder = new google.maps.Geocoder;
 
-                var address = geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
+                var address = new geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
 
-                console.log(geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng));
+                console.log(address);
 
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
