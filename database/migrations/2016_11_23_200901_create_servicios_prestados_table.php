@@ -13,6 +13,7 @@ class CreateServiciosPrestadosTable extends Migration {
 			$table->integer('id_suscriptor')->unsigned();
 			$table->string('latitud_origen');
 			$table->string('longitud_origen');
+            $table->enum('estado', array('Activo', 'Terminado'));
 			$table->timestamps();
 		});
 	}

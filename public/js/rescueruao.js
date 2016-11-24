@@ -83,9 +83,7 @@ function initMap() {
 
     });
 
+    $.get('/getservices')
 
 }
 
-function updateLocation() {
-
-}

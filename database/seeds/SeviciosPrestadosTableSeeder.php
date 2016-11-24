@@ -17,6 +17,7 @@ class SeviciosPrestadosTableSeeder extends Seeder
             'id_suscriptor'  => '3',
             'latitud_origen'  => '3.405972',
             'longitud_origen'  => '-76.514763',
+            'estado'  => 'Activo',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -26,6 +27,7 @@ class SeviciosPrestadosTableSeeder extends Seeder
             'id_suscriptor'  => '4',
             'latitud_origen'  => '3.425972',
             'longitud_origen'  => '-76.524763',
+            'estado'  => 'Activo',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
