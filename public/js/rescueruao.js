@@ -93,9 +93,7 @@ function initMap() {
 
                 var geocoder = new google.maps.Geocoder;
 
-                var address = new geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
-
-                console.log(address);
+                geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
 
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
@@ -103,7 +101,7 @@ function initMap() {
                     '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
                     '<div id="bodyContent">'+
                     '<p>usurio solicitante: <b>'+ serviciosprestados.suscriptor +'</b><br />' +
-                    '<p>Ubicada en: <b>'+ address +'</b><br />' +
+                    '<p>Ubicada en: <b>'+ geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng) +'</b><br />' +
                     '</div>'+
                     '</div>';
 
