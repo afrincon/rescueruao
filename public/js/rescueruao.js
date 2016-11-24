@@ -29,6 +29,11 @@ function initMap() {
 
   // console.log('ran init map');
 
+    
+
+}
+
+function loadMarker() {
     // Trigger downloadUrl at an interval
     $.get( '/getvehicles', function( vehiculos ) {
         var locations = [];
@@ -123,9 +128,12 @@ function initMap() {
             });
         }
     });
-
 }
 
+setTimeout(function() {  loadMarker(); }, 3000);
+
+google.maps.event.addDomListener(window, 'load', initMap);
+google.maps.event.addDomListener(window, 'load', loadMarker);
 
 /*function geocodeLatLng(geocoder, latitude, longitud) {
     var latlng = {lat: latitude, lng: longitud};
