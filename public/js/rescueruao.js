@@ -101,11 +101,7 @@ function initMap() {
                     '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
                     '<div id="bodyContent">'+
                     '<p>Usuario Solicitante: <b>'+ serviciosprestados.nombre + " " + serviciosprestados.apellidos +'</b><br />' +
-                    '<p>Ubicada en: <b>'+serviciosprestados.address+'</b><br />' +
-                    '<p>Tipo de sangre: <b>'+serviciosprestados.bloodtype+'</b><br />' +
-                    '<p>Altura: <b>'+serviciosprestados.height_user+'</b><br />' +
-                    '<p>Tipo de sangre: <b>'+serviciosprestados.bloodtype+'</b><br />' +
-                    '<p>Entidad Prestadora de Salud: <b>'+serviciosprestados.health_service+'</b><br />' +
+
                     '</div>'+
                     '</div>';
 
