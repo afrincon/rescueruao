@@ -88,7 +88,7 @@ function initMap() {
         for (i=0; i<servicios.length; i++){
             $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
                 serviciosprestados.latitud = parseFloat(serviciosprestados.latitud, 10);
-                serviciosprestados.latitud = parseFloat(serviciosprestados.longitud, 10);
+                serviciosprestados.longitud = parseFloat(serviciosprestados.longitud, 10);
                 var image = '/images/icon-service.png';
 
                 var geocoder = new google.maps.Geocoder;
@@ -111,7 +111,7 @@ function initMap() {
 
 
                 var marker = new google.maps.Marker({
-                    position: {lat: serviciosprestados.lat, lng: serviciosprestados.lng},
+                    position: {lat: serviciosprestados.latitud, lng: serviciosprestados.longitud},
                     map: map,
                     icon: image
                 });
