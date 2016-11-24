@@ -4,14 +4,15 @@ window.jQuery(function() {
   initMap();
 });
 
-var map = new google.maps.Map(document.getElementById('mapa'), {
-    zoom: 12,
-    center: centroMapa
-});
+
 
 function initMap() {
   var centroMapa = {lat: 3.454956, lng: -76.5183073};
 
+    var map = new google.maps.Map(document.getElementById('mapa'), {
+        zoom: 12,
+        center: centroMapa
+    });
   //Obtener informacion de latitud y longitud
   // $.get( '/getvehicles', function( vehiculos ) {
   //   $.get( '/obtenerUbicacion/1', function( ubicacion ) {
