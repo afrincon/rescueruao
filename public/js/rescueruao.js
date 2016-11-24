@@ -4,76 +4,6 @@ window.jQuery(function() {
   initMap();
 });
 
-var map= null;
-
-
-function loadMarker() {
-    // Trigger downloadUrl at an interval
-    $.get('/obtenerservicios', function (servicios) {
-        //console.log(servicios);
-        for (i=0; i<servicios.length; i++){
-            $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
-                serviciosprestados.latitud = parseFloat(serviciosprestados.latitud, 10);
-                serviciosprestados.longitud = parseFloat(serviciosprestados.longitud, 10);
-                var image = '/images/icon-service.png';
-
-                var contentString = '<div id="content">'+
-                    '<div id="siteNotice">'+
-                    '</div>'+
-                    '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
-                    '<div id="bodyContent">'+
-                    '<p>Usuario solicitante: <b>'+ serviciosprestados.nombre + ' '+ serviciosprestados.apellidos +'</b><br />' +
-                    '<p>Ubicada en: <b>'+ serviciosprestados.address +'</b><br />' +
-                    '<p>Genero: <b>'+ serviciosprestados.gender +'</b><br />' +
-                    '<p>Teléfono: <b>'+ serviciosprestados.phone +'</b><br />' +
-                    '<p>Servicio de salud: <b>'+ serviciosprestados.health_service +'</b><br />' +
-                    '</div>'+
-                    '</div>';
-
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-
-
-                var marker = new google.maps.Marker({
-                    position: {lat: serviciosprestados.latitud, lng: serviciosprestados.longitud},
-                    map: map,
-                    icon: image
-                });
-
-                marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                });
-
-            });
-        }
-    });
-}
-
-setTimeout(function() {  loadMarker(); }, 3000);
-
-google.maps.event.addDomListener(window, 'load', initMap);
-google.maps.event.addDomListener(window, 'load', loadMarker);
-
-/*function geocodeLatLng(geocoder, latitude, longitud) {
-    var latlng = {lat: latitude, lng: longitud};
-    address = '';
-    geocoder.geocode({'location': latlng}, function(results, status) {
-        if (status === google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-
-                address = results[1].formatted_address;
-
-
-            } else {
-                window.alert('No results found');
-            }
-        } else {
-            window.alert('Geocoder failed due to: ' + status);
-        }
-    });
-    return address;
-}*/
 
 function initMap() {
     var centroMapa = {lat: 3.454956, lng: -76.5183073};
@@ -155,7 +85,7 @@ function initMap() {
 
     });
 
-    /*$.get('/obtenerservicios', function (servicios) {
+    $.get('/obtenerservicios', function (servicios) {
      //console.log(servicios);
      for (i=0; i<servicios.length; i++){
      $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
@@ -193,6 +123,75 @@ function initMap() {
 
      });
      }
-     });*/
+     });
 
 }
+
+
+/*function loadMarker() {
+    // Trigger downloadUrl at an interval
+    $.get('/obtenerservicios', function (servicios) {
+        //console.log(servicios);
+        for (i=0; i<servicios.length; i++){
+            $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
+                serviciosprestados.latitud = parseFloat(serviciosprestados.latitud, 10);
+                serviciosprestados.longitud = parseFloat(serviciosprestados.longitud, 10);
+                var image = '/images/icon-service.png';
+
+                var contentString = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
+                    '<div id="bodyContent">'+
+                    '<p>Usuario solicitante: <b>'+ serviciosprestados.nombre + ' '+ serviciosprestados.apellidos +'</b><br />' +
+                    '<p>Ubicada en: <b>'+ serviciosprestados.address +'</b><br />' +
+                    '<p>Genero: <b>'+ serviciosprestados.gender +'</b><br />' +
+                    '<p>Teléfono: <b>'+ serviciosprestados.phone +'</b><br />' +
+                    '<p>Servicio de salud: <b>'+ serviciosprestados.health_service +'</b><br />' +
+                    '</div>'+
+                    '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+
+                var marker = new google.maps.Marker({
+                    position: {lat: serviciosprestados.latitud, lng: serviciosprestados.longitud},
+                    map: map,
+                    icon: image
+                });
+
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+
+            });
+        }
+    });
+}
+
+setTimeout(function() {  loadMarker(); }, 3000);
+
+google.maps.event.addDomListener(window, 'load', initMap);
+google.maps.event.addDomListener(window, 'load', loadMarker);
+
+/*function geocodeLatLng(geocoder, latitude, longitud) {
+    var latlng = {lat: latitude, lng: longitud};
+    address = '';
+    geocoder.geocode({'location': latlng}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+
+                address = results[1].formatted_address;
+
+
+            } else {
+                window.alert('No results found');
+            }
+        } else {
+            window.alert('Geocoder failed due to: ' + status);
+        }
+    });
+    return address;
+}*/
