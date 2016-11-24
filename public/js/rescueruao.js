@@ -96,8 +96,11 @@ function initMap() {
                     '</div>'+
                     '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
                     '<div id="bodyContent">'+
-                    '<p>usurio solicitante: <b>'+ serviciosprestados.nombre + ' '+ serviciosprestados.apellidos +'</b><br />' +
+                    '<p>Usuario solicitante: <b>'+ serviciosprestados.nombre + ' '+ serviciosprestados.apellidos +'</b><br />' +
                     '<p>Ubicada en: <b>'+ serviciosprestados.address +'</b><br />' +
+                    '<p>Genero: <b>'+ serviciosprestados.gender +'</b><br />' +
+                    '<p>Teléfono: <b>'+ serviciosprestados.phone +'</b><br />' +
+                    '<p>Servicio de salud: <b>'+ serviciosprestados.health_service +'</b><br />' +
                     '</div>'+
                     '</div>';
 
