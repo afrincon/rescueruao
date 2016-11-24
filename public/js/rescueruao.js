@@ -95,6 +95,8 @@ function initMap() {
 
                 var address = geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
 
+                console.log("direccion" + address);
+
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
                     '</div>'+
