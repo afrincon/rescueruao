@@ -65,8 +65,6 @@ class ServicioController extends Controller
 
 
         ];
-
-        dd($prestacion);
         return $prestacion;
     }
 
