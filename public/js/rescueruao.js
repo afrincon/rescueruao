@@ -83,7 +83,21 @@ function initMap() {
 
     });
 
-    $.get('/getservices')
+    $.get('/obtenerservicios', function (servicios) {
+
+        for (i=0; i<servicios.length; i++){
+            $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
+                ubicacion.lat = parseFloat(serviciosprestados.latitud, 10);
+                ubicacion.lng = parseFloat(serviciosprestados.longitud, 10);
+
+                var marker = new google.maps.Marker({
+                    position: {lat: ubicacion.lat, lng: ubicacion.lng},
+                    map: map
+                });
+
+            });
+        }
+    });
 
 }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ServiciosPrestados;
 use Illuminate\Http\Request;
 use App\Servicio;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,15 @@ class ServicioController extends Controller
     public function index(){
         $servicios = Servicio::paginate();
         return view('backend.servicios.index', compact('servicios'));
+    }
+
+    public function getActiveServices() {
+        $servicio = ServiciosPrestados::where('estado', '=', 'Activo')->get();
+        $servicios = [];
+        for ($i=0; $i < count($servicio); $i++) {
+            array_push($servicios, $servicio[$i]->id_servicio );
+        }
+        return $servicios;
     }
 
     public function getServiceInformation($id){

@@ -35,4 +35,6 @@ Route::get('/obtenerUbicacion/{id}', 'VehiculosController@getVehicleInformation'
 
 Route::get('/getvehicles', 'VehiculosController@countVehicles');
 
-Route::get('/obtenerServicio/{id}', 'ServicioController@getServiceInformation');
+Route::get('/obtenerservicios', 'ServicioController@getActiveServices');
+
+Route::get('/obtenerinformacionservicio/{id}', 'ServicioController@getServiceInformation');
