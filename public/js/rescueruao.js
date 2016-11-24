@@ -100,8 +100,12 @@ function initMap() {
                     '</div>'+
                     '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
                     '<div id="bodyContent">'+
-                    '<p>usurio solicitante: <b>'+ serviciosprestados.suscriptor +'</b><br />' +
-                    '<p>Ubicada en: <b>Direccion</b><br />' +
+                    '<p>Usuario Solicitante: <b>'+ serviciosprestados.nombre + " " + serviciosprestados.apellidos +'</b><br />' +
+                    '<p>Ubicada en: <b>'+serviciosprestados.address+'</b><br />' +
+                    '<p>Tipo de sangre: <b>'+serviciosprestados.bloodtype+'</b><br />' +
+                    '<p>Altura: <b>'+serviciosprestados.height_user+'</b><br />' +
+                    '<p>Tipo de sangre: <b>'+serviciosprestados.bloodtype+'</b><br />' +
+                    '<p>Entidad Prestadora de Salud: <b>'+serviciosprestados.health_service+'</b><br />' +
                     '</div>'+
                     '</div>';
 
@@ -144,6 +148,5 @@ function geocodeLatLng(geocoder, latitude, longitud) {
             window.alert('Geocoder failed due to: ' + status);
         }
     });
-    console.log(address);
     return address;
 }

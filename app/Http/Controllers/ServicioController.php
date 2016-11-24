@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ServiciosPrestados;
+use App\User;
 use Illuminate\Http\Request;
 use App\Servicio;
 use Illuminate\Support\Facades\DB;
@@ -44,14 +45,28 @@ class ServicioController extends Controller
 
 
 
+        $usuario = User::where('id', '=', $serv[0]->id_suscriptor)->get();
+
+
+
         $prestacion = [
             'servicio'  => $servicio->tipo_servicio,
             'suscriptor'    => $serv[0]->id_suscriptor,
             'latitud'    => $serv[0]->latitud_origen,
             'longitud'    => $serv[0]->longitud_origen,
+            'nombre' =>     $usuario[0]->first_name,
+            'apellidos' =>     $usuario[0]->last_name,
+            'gender' =>     $usuario[0]->gender,
+            'address' =>     $usuario[0]->address,
+            'phone' =>     $usuario[0]->phone,
+            'health_service' =>     $usuario[0]->health_service,
+            'height_user' =>     $usuario[0]->height,
+            'bloodtype' =>     $usuario[0]->bloodtype,
+
 
         ];
 
+        dd($prestacion);
         return $prestacion;
     }
 
