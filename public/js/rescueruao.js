@@ -29,12 +29,6 @@ function initMap() {
 
   // console.log('ran init map');
 
-    
-
-}
-
-function loadMarker() {
-    // Trigger downloadUrl at an interval
     $.get( '/getvehicles', function( vehiculos ) {
         var locations = [];
         for(var i = 1; i <= vehiculos.cantidad; i++) {
@@ -128,6 +122,13 @@ function loadMarker() {
             });
         }
     });
+
+}
+
+/*
+function loadMarker() {
+    // Trigger downloadUrl at an interval
+
 }
 
 setTimeout(function() {  loadMarker(); }, 3000);
