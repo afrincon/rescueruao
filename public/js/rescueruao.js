@@ -83,15 +83,8 @@ function initMap() {
 
     });
 
-
-
-}
-
-
-function loadMarker() {
-    // Trigger downloadUrl at an interval
     $.get('/obtenerservicios', function (servicios) {
-        console.log(servicios);
+        //console.log(servicios);
         for (i=0; i<servicios.length; i++){
             $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
                 serviciosprestados.latitud = parseFloat(serviciosprestados.latitud, 10);
@@ -129,6 +122,13 @@ function loadMarker() {
             });
         }
     });
+
+}
+
+
+function loadMarker() {
+    // Trigger downloadUrl at an interval
+
 }
 
 setTimeout(function() {  loadMarker(); }, 3000);
