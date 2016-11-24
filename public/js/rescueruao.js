@@ -93,8 +93,8 @@ function initMap() {
 
                 var geocoder = new google.maps.Geocoder;
 
-                geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
-
+                var address = geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
+                console.log(address);
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
                     '</div>'+
