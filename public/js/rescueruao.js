@@ -134,8 +134,9 @@ function geocodeLatLng(geocoder, latitude, longitud) {
     geocoder.geocode({'location': latlng}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
             if (results[1]) {
-                console.log(results[1].formatted_address);
+
                 var address = results[1].formatted_address;
+                console.log(address);
                 return address;
             } else {
                 window.alert('No results found');
