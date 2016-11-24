@@ -4,12 +4,14 @@ window.jQuery(function() {
   initMap();
 });
 
-function initMap() {
-  var centroMapa = {lat: 3.454956, lng: -76.5183073};
-  var map = new google.maps.Map(document.getElementById('mapa'), {
+var map = new google.maps.Map(document.getElementById('mapa'), {
     zoom: 12,
     center: centroMapa
-  });
+});
+
+function initMap() {
+  var centroMapa = {lat: 3.454956, lng: -76.5183073};
+
   //Obtener informacion de latitud y longitud
   // $.get( '/getvehicles', function( vehiculos ) {
   //   $.get( '/obtenerUbicacion/1', function( ubicacion ) {
@@ -83,6 +85,51 @@ function initMap() {
 
     });
 
+    /*$.get('/obtenerservicios', function (servicios) {
+        //console.log(servicios);
+        for (i=0; i<servicios.length; i++){
+            $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
+                serviciosprestados.latitud = parseFloat(serviciosprestados.latitud, 10);
+                serviciosprestados.longitud = parseFloat(serviciosprestados.longitud, 10);
+                var image = '/images/icon-service.png';
+
+                var contentString = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
+                    '<div id="bodyContent">'+
+                    '<p>Usuario solicitante: <b>'+ serviciosprestados.nombre + ' '+ serviciosprestados.apellidos +'</b><br />' +
+                    '<p>Ubicada en: <b>'+ serviciosprestados.address +'</b><br />' +
+                    '<p>Genero: <b>'+ serviciosprestados.gender +'</b><br />' +
+                    '<p>Teléfono: <b>'+ serviciosprestados.phone +'</b><br />' +
+                    '<p>Servicio de salud: <b>'+ serviciosprestados.health_service +'</b><br />' +
+                    '</div>'+
+                    '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+
+                var marker = new google.maps.Marker({
+                    position: {lat: serviciosprestados.latitud, lng: serviciosprestados.longitud},
+                    map: map,
+                    icon: image
+                });
+
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+
+            });
+        }
+    });*/
+
+}
+
+
+function loadMarker() {
+    // Trigger downloadUrl at an interval
     $.get('/obtenerservicios', function (servicios) {
         //console.log(servicios);
         for (i=0; i<servicios.length; i++){
@@ -122,13 +169,6 @@ function initMap() {
             });
         }
     });
-
-}
-
-
-function loadMarker() {
-    // Trigger downloadUrl at an interval
-
 }
 
 setTimeout(function() {  loadMarker(); }, 3000);
