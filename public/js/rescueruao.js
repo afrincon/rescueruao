@@ -96,8 +96,8 @@ function initMap() {
                     '</div>'+
                     '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
                     '<div id="bodyContent">'+
-                    '<p>usurio solicitante: <b>'+ serviciosprestados.suscriptor +'</b><br />' +
-                    '<p>Ubicada en: <b>Direccion</b><br />' +
+                    '<p>usurio solicitante: <b>'+ serviciosprestados.nombre + ' '+ serviciosprestados.apellidos +'</b><br />' +
+                    '<p>Ubicada en: <b>'+ serviciosprestados.address +'</b><br />' +
                     '</div>'+
                     '</div>';
 
