@@ -91,7 +91,7 @@ function initMap() {
                 serviciosprestados.lng = parseFloat(serviciosprestados.longitud, 10);
                 var image = '/images/icon-service.png';
 
-                console.log(serviciosprestados);
+                //console.log(serviciosprestados);
 
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
@@ -110,7 +110,8 @@ function initMap() {
 
                 var marker = new google.maps.Marker({
                     position: {lat: serviciosprestados.lat, lng: serviciosprestados.lng},
-                    map: map
+                    map: map,
+                    icon: image
                 });
 
             });
