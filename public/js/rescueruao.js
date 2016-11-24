@@ -87,11 +87,11 @@ function initMap() {
 
         for (i=0; i<servicios.length; i++){
             $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
-                ubicacion.lat = parseFloat(serviciosprestados.latitud, 10);
-                ubicacion.lng = parseFloat(serviciosprestados.longitud, 10);
+                serviciosprestados.lat = parseFloat(serviciosprestados.latitud, 10);
+                serviciosprestados.lng = parseFloat(serviciosprestados.longitud, 10);
 
                 var marker = new google.maps.Marker({
-                    position: {lat: ubicacion.lat, lng: ubicacion.lng},
+                    position: {lat: serviciosprestados.lat, lng: serviciosprestados.lng},
                     map: map
                 });
 
