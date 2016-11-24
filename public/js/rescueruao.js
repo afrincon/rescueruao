@@ -87,13 +87,13 @@ function initMap() {
 
         for (i=0; i<servicios.length; i++){
             $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
-                serviciosprestados.lat = parseFloat(serviciosprestados.latitud, 10);
-                serviciosprestados.lng = parseFloat(serviciosprestados.longitud, 10);
+                serviciosprestados.latitud = parseFloat(serviciosprestados.latitud, 10);
+                serviciosprestados.latitud = parseFloat(serviciosprestados.longitud, 10);
                 var image = '/images/icon-service.png';
 
                 var geocoder = new google.maps.Geocoder;
 
-                var address = geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
+                var address = geocodeLatLng(geocoder, serviciosprestados.latitud, serviciosprestados.latitud);
                 console.log("var" + address);
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
