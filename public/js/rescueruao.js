@@ -89,6 +89,24 @@ function initMap() {
             $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
                 serviciosprestados.lat = parseFloat(serviciosprestados.latitud, 10);
                 serviciosprestados.lng = parseFloat(serviciosprestados.longitud, 10);
+                var image = '/images/icon-service.png';
+
+                console.log(serviciosprestados);
+
+                var contentString = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<h3 id="firstHeading" class="firstHeading">' +  serviciosprestados.servicio+ '</h3>'+
+                    '<div id="bodyContent">'+
+                    '<p>usurio solicitante: <b>'+ serviciosprestados.suscriptor +'</b><br />' +
+                    '<p>Ubicada en: <b>'+ serviciosprestados.latitud +'</b>con <b>'+serviciosprestados.latitud +'</b><br />' +
+                    '</div>'+
+                    '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
 
                 var marker = new google.maps.Marker({
                     position: {lat: serviciosprestados.lat, lng: serviciosprestados.lng},
