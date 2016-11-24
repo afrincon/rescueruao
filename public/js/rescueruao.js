@@ -94,7 +94,7 @@ function initMap() {
                 var geocoder = new google.maps.Geocoder;
 
                 var address = geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
-                console.log(address);
+                console.log("var" + address);
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
                     '</div>'+
@@ -136,6 +136,7 @@ function geocodeLatLng(geocoder, latitude, longitud) {
 
                 address = results[1].formatted_address;
 
+
             } else {
                 window.alert('No results found');
             }
@@ -143,5 +144,6 @@ function geocodeLatLng(geocoder, latitude, longitud) {
             window.alert('Geocoder failed due to: ' + status);
         }
     });
+    console.log(address);
     return address;
 }
