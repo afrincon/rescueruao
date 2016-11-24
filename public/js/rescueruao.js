@@ -114,6 +114,10 @@ function initMap() {
                     icon: image
                 });
 
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+
             });
         }
     });
