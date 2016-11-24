@@ -91,7 +91,9 @@ function initMap() {
                 serviciosprestados.lng = parseFloat(serviciosprestados.longitud, 10);
                 var image = '/images/icon-service.png';
 
-                //console.log(serviciosprestados);
+                var geocoder = new google.maps.Geocoder;
+
+                geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
 
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
@@ -124,3 +126,14 @@ function initMap() {
 
 }
 
+
+function geocodeLatLng(geocoder, latitude, longitud) {
+    var latlng = {lat: latitude, lng: longitud};
+    geocoder.geocode({'location': latlng}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                console.log(results[1].formatted_address);
+            }
+        }
+    });
+}
