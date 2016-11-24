@@ -87,14 +87,10 @@ function initMap() {
 
         for (i=0; i<servicios.length; i++){
             $.get('/obtenerinformacionservicio/' + servicios[i], function (serviciosprestados) {
-                serviciosprestados.lat = parseFloat(serviciosprestados.latitud, 10);
-                serviciosprestados.lng = parseFloat(serviciosprestados.longitud, 10);
+                serviciosprestados.latitud = parseFloat(serviciosprestados.latitud, 10);
+                serviciosprestados.longitud = parseFloat(serviciosprestados.longitud, 10);
                 var image = '/images/icon-service.png';
 
-                var geocoder = new google.maps.Geocoder;
-
-                var address = geocodeLatLng(geocoder, serviciosprestados.lat, serviciosprestados.lng);
-                console.log("var" + address);
                 var contentString = '<div id="content">'+
                     '<div id="siteNotice">'+
                     '</div>'+
@@ -111,7 +107,7 @@ function initMap() {
 
 
                 var marker = new google.maps.Marker({
-                    position: {lat: serviciosprestados.lat, lng: serviciosprestados.lng},
+                    position: {lat: serviciosprestados.latitud, lng: serviciosprestados.longitud},
                     map: map,
                     icon: image
                 });
@@ -127,7 +123,7 @@ function initMap() {
 }
 
 
-function geocodeLatLng(geocoder, latitude, longitud) {
+/*function geocodeLatLng(geocoder, latitude, longitud) {
     var latlng = {lat: latitude, lng: longitud};
     address = '';
     geocoder.geocode({'location': latlng}, function(results, status) {
@@ -145,4 +141,4 @@ function geocodeLatLng(geocoder, latitude, longitud) {
         }
     });
     return address;
-}
+}*/
